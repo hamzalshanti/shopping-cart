@@ -1,0 +1,33 @@
+<div class="row justify-content-center">
+    <!-- col -->
+    <div class="col-8 mb-5">
+        <ul class="list-group">
+            <% products.forEach(product => { %> 
+            <li class="list-group-item d-flex align-items-center">
+                <Strong><%= product.item.title %></Strong>
+                <span class="px-3 py-1 ml-5" style="background-color:coral;color: white;border-radius: 8px;">$<%= product.price %></span>
+                <div class="btn-group ml-3" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary">Middle</button>
+                    <button type="button" class="btn btn-secondary">Right</button>
+                </div>
+                <span class="d-inline-flex justify-content-center align-items-center ml-auto small rounded-circle" style="background-color: gray; color:white; width: 30px; height: 30px;">
+                    <%= product.qty %>
+                </span>
+            </li>
+            <% }) %> 
+        </ul>
+    </div>
+    <!-- /col -->
+</div>
+
+<hr />
+
+<div class="">
+    <strong>Total Price | <span style="color: teal;">$<%= totalPrice %></span></strong>
+</div>
+
+<% if(products.length < 0) { %> 
+<div class="my-5">
+    <h2 class="text-center text-muted">No items in Cart</h2>
+</div>
+<% } %> 

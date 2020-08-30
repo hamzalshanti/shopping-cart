@@ -1,0 +1,26 @@
+
+<!-- row -->
+<div class="row">
+    <% products.forEach(product => { %> 
+    <!-- col -->
+    <div class="col col-sm-6 col-md-4 col-lg-3 mb-5">
+        <!-- card -->
+        <div class="card">
+            <img src="<%= product.imagePath %>" class="card-img-top img-fluid" alt="...">
+            <div class="card-body">
+                <h5 class="card-title"><%= product.title %></h5>
+                <p class="card-text text-muted">
+                    <%= product.description %>
+                </p>
+                <div class="d-flex align-items-center">
+                    <div class="price font-weight-bold">$<%= product.price %></div>
+                    <a href="/add-to-cart/<%= product._id %>" class="btn btn-info ml-auto p-1">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        <!-- /card -->
+    </div>
+    <!-- /col -->
+    <% }) %> 
+</div>
+<!-- /row -->
